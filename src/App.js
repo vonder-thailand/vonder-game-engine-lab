@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Laboratory from "./Components/Laboratory";
+import { AppProvider } from "./Stores/AppContext";
+import { PixiProvider } from "./Stores/PixiContext";
+import { LaboratoryProvider } from "./Stores/LaboratoryContext";
+import PixiApp from "./Components/PixiApp";
+import GameContent from "./Game/PixiCores/GameContent";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppProvider>
+      <PixiProvider>
+        <PixiApp content={GameContent} />
+      </PixiProvider>
+      <LaboratoryProvider>
+        <Laboratory></Laboratory>
+      </LaboratoryProvider>
+    </AppProvider>
   );
 }
 
