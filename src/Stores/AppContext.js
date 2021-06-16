@@ -15,13 +15,17 @@ function useWindowSize(scene) {
   useEffect(() => {
     function handleResize() {
       setWindowSize({
+        // width: window.innerWidth,
+        // height:
+        //   window.innerHeight <= window.innerWidth * 0.5625
+        //     ? window.innerHeight
+        //     : window.innerWidth * 0.5625,
+        // maxWidth: window.innerHeight * 1.7778,
+        // maxHeight: window.innerWidth * 0.5625,
         width: window.innerWidth,
-        height:
-          window.innerHeight <= window.innerWidth * 0.5625
-            ? window.innerHeight
-            : window.innerWidth * 0.5625,
-        maxWidth: window.innerHeight * 1.7778,
-        maxHeight: window.innerWidth * 0.5625,
+        height: window.innerHeight,
+        maxWidth: window.innerWidth,
+        maxHeight: window.innerHeight,
       });
     }
 

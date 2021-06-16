@@ -3,7 +3,11 @@ import { createContext, useContext } from "react";
 const LaboratoryContext = createContext(null);
 
 function LaboratoryProvider({ children }) {
-  return <LaboratoryContext.Provider>{children}</LaboratoryContext.Provider>;
+  return (
+    <LaboratoryContext.Provider value={{}}>
+      {children}
+    </LaboratoryContext.Provider>
+  );
 }
 
 const useLaboratoryContext = () => {
